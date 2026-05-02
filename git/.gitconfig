@@ -1,0 +1,32 @@
+[user]
+    signingkey = /home/ansh/.ssh/id_ed25519
+    email = anshraj220109@proton.me
+    name = Ansh2209
+[commit]
+    gpgsign = true
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    allowedSignersFile = /home/ansh/.config/git/allowed_signers
+[init]
+    defaultBranch = main
+[core]
+    editor = micro
+[pull]
+    ff = only
+[push]
+    autoSetupRemote = true
+[fetch]
+    prune = true
+[rebase]
+    autostash = true
+[diff]
+    colorMoved = default
+    algorithm = histogram
+[alias]
+    up = !git fetch upstream && git rebase upstream/main
+    sync = !git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fd
+	b = switch -c
+    unstage = restore --staged
+	ac = !git add . && git commit
+    ac = "!f() { git add ${1} && git commit; }; f"
