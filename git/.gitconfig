@@ -1,6 +1,6 @@
 [user]
     signingkey = /home/ansh/.ssh/id_ed25519
-    email = anshraj220109@proton.me
+    email = anshraj220109+github@proton.me
     name = Ansh2209
 [commit]
     gpgsign = true
