@@ -9,7 +9,6 @@ if status is-interactive
     thefuck --alias | source
     zoxide init fish | source
     mise activate fish | source
-    fnm env --use-on-cd --shell fish | source
 end
 
 if status --is-login
