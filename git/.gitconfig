@@ -28,5 +28,4 @@
     sync = !git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fd
 	b = switch
     unstage = restore --staged
-	ac = !git add . && git commit
-    ac = "!f() { git add ${1} && git commit; }; f"
+    ac = "!f() { git add ${@:-.} && git commit; }; f"
