@@ -25,7 +25,6 @@
     colorMoved = default
     algorithm = histogram
 [alias]
-    up = !git fetch upstream && git rebase upstream/main
     sync = !git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fd
 	b = switch
     unstage = restore --staged
