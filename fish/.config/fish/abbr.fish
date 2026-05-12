@@ -8,7 +8,6 @@ abbr -a cl 'clear'
 abbr -a lg 'lazygit'
 abbr -a du 'gdu'
 abbr -a y 'yazi'
-abbr -a g 'git'
 
 # ARCH
 abbr -a cleanup 'sudo pacman -Rns (pacman -Qtdq)'
