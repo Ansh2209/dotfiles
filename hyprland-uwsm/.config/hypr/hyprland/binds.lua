@@ -72,6 +72,7 @@ hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" }) -- t
 hl.gesture({
     fingers = 3,
     direction = "down",
+---@diagnostic disable-next-line: assign-type-mismatch
     action = function()
         hl.exec_cmd("hyprshot -z -s -m region --clipboard-only")
     end
@@ -79,6 +80,7 @@ hl.gesture({
 hl.gesture({
     fingers = 4,
     direction = "down",
+---@diagnostic disable-next-line: assign-type-mismatch
     action = function()
         hl.exec_cmd("hyprshot -z -m region -o ~/Pictures/captures -f $(date +%I-%M-%S%p_%d-%m-%Y.png)")
     end
