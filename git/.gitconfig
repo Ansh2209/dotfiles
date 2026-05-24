@@ -25,6 +25,6 @@
     colorMoved = default
     algorithm = histogram
 [alias]
-    sync = !git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fd
+    sync = !BRANCH=$(git branch --show-current) && git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fdx && git switch $BRANCH
     unstage = restore --staged
     ac = !git add . && git commit
