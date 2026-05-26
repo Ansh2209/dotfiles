@@ -29,3 +29,5 @@
     ac = !git add . && git commit
 [includeIf "gitdir:~/repos/github/"]
     path = ~/.gitconfig_github
+[includeIf "gitdir:~/repos/codeberg/"]
+    path = ~/.gitconfig_codeberg
