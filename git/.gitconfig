@@ -1,6 +1,5 @@
 [user]
-    signingkey = /home/ansh/.ssh/id_ed25519.pub
-    email = anshraj220109+github@proton.me
+    signingkey = /home/ansh/.ssh/id_ed25519_signing.pub
     name = Ansh2209
 [commit]
     gpgsign = true
@@ -28,3 +27,5 @@
     sync = !BRANCH=$(git branch --show-current) && git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fdx && git switch $BRANCH
     unstage = restore --staged
     ac = !git add . && git commit
+[includeIf "gitdir:~/repos/github/"]
+    path = ~/.gitconfig_github
