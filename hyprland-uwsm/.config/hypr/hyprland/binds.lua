@@ -53,7 +53,7 @@ hl.bind(mainMod .. " + mouse:274", hl.dsp.focus({ workspace = 1 })) -- workspace
 
 -- SPECIAL WORKSPACE
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("special"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special", follow = false }))
 
 -- VOLUME
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
