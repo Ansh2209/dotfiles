@@ -3,5 +3,5 @@ function mkcd
 end
 
 function vscode
-    code -p $argv && exit
+    code $argv && exit
 end
