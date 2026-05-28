@@ -13,5 +13,5 @@ abbr -a y 'yazi'
 abbr -a cleanup 'sudo pacman -Rns (pacman -Qtdq)'
 
 # Fish
-abbr -a fishs 'source ~/.config/fish/config.fish'
+abbr -a srcfish 'source ~/.config/fish/config.fish'
 abbr -a abbrs 'micro ~/.config/fish/abbr.fish'
