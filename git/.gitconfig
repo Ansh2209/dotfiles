@@ -3,6 +3,7 @@
     name = Ansh2209
 [commit]
     gpgsign = true
+    verbose = true
 [gpg]
     format = ssh
 [gpg "ssh"]
