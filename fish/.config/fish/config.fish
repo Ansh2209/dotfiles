@@ -6,9 +6,7 @@ if status is-interactive
     source ~/.config/fish/functions.fish
         
     # INITIALIZE TOOLS
-    thefuck --alias | source
     zoxide init fish | source
-    mise activate fish | source
 end
 
 if status --is-login
