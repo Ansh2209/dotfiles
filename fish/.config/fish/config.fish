@@ -7,6 +7,7 @@ if status is-interactive
         
     # INITIALIZE TOOLS
     zoxide init fish | source
+    devenv hook fish | source
 end
 
 if status --is-login
