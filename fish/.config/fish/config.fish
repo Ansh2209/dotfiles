@@ -1,6 +1,9 @@
 if status is-interactive
     set -g fish_greeting "" # REMOVE FISH GREETING
 
+    # ADD PATH
+    fish_add_path ~/.nix-profile/bin
+    
     # SOURCE
     source ~/.config/fish/abbr.fish
     source ~/.config/fish/functions.fish
