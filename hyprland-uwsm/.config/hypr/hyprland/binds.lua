@@ -21,6 +21,7 @@ hl.bind(mainMod .. " + TAB",        hl.dsp.window.cycle_next()) -- cycle next wi
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(launcher .. " vicinae://toggle")) -- Toggle Launcher
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher .. " vicinae://launch/applications")) -- App Launcher
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(launcher .. " vicinae://launch/clipboard/history")) -- Clipboard History
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(settings))
