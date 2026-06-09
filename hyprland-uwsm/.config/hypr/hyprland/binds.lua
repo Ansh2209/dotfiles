@@ -5,7 +5,7 @@ local ipc =     "qs -c noctalia-shell ipc call"
 -- PROGRAMS
 local terminal =    "uwsm-app -- kitty"
 local fileManager = "uwsm-app -- kitty -e yazi"
-local appLauncher = "uwsm-app -- walker"
+local launcher =    "uwsm-app -- vicinae"
 local browser =     "uwsm-app -- librewolf"
 local powerMenu =   ipc .. " sessionMenu toggle"
 local settings =    ipc .. " settings toggle"
@@ -21,8 +21,8 @@ hl.bind(mainMod .. " + TAB",        hl.dsp.window.cycle_next()) -- cycle next wi
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(appLauncher))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(appLauncher .. " -m clipboard"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher .. " vicinae://launch/applications")) -- App Launcher
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(launcher .. " vicinae://launch/clipboard/history")) -- Clipboard History
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(settings))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(powerMenu))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("uwsm-app -- kitty -e nmtui"))
