@@ -1,21 +1,21 @@
 -- VARS
 local mainMod = "SUPER"
-local ipc =     "qs -c noctalia-shell ipc call"
+local ipc = "qs -c noctalia-shell ipc call"
 
 -- PROGRAMS
-local terminal =    "uwsm-app -- kitty"
+local terminal = "uwsm-app -- kitty"
 local fileManager = "uwsm-app -- kitty -e yazi"
-local launcher =    "uwsm-app -- vicinae"
-local browser =     "uwsm-app -- librewolf"
-local powerMenu =   ipc .. " sessionMenu toggle"
-local settings =    ipc .. " settings toggle"
+local launcher = "uwsm-app -- vicinae"
+local browser = "uwsm-app -- librewolf"
+local powerMenu = ipc .. " sessionMenu toggle"
+local settings = ipc .. " settings toggle"
 
 -- ACTIONS
-hl.bind(mainMod .. " + C",          hl.dsp.window.close()) -- close a window
-hl.bind(mainMod .. " + SHIFT + C",  hl.dsp.window.kill()) -- force close (kill) a window
-hl.bind(mainMod .. " + F",          hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle"})) -- maximise a window
-hl.bind(mainMod .. " + SHIFT + F",  hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })) -- fullscreen a window
-hl.bind(mainMod .. " + TAB",        hl.dsp.window.cycle_next()) -- cycle next window
+hl.bind(mainMod .. " + C", hl.dsp.window.close()) -- close a window
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.kill()) -- force close (kill) a window
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })) -- maximise a window
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })) -- fullscreen a window
+hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next()) -- cycle next window
 
 -- LAUNCHING STUFF
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
@@ -29,10 +29,10 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(powerMenu))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("uwsm-app -- kitty -e nmtui"))
 
 -- MOVE FOCUS WITH ARROW KEYS
-hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
 -- MOVE/RESIZE WINDOWS WITH MOUSE KEYS
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -46,9 +46,9 @@ hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" })
 
 -- SWITCH WORKSPACES WITH mainMod + [0-9]
 for i = 1, 10 do
-    local key = i % 10
-    hl.bind(mainMod .. " + " .. key,         hl.dsp.focus({ workspace = i }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
+  local key = i % 10
+  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 hl.bind(mainMod .. " + mouse:274", hl.dsp.focus({ workspace = 1 })) -- workspace 1 with mainMod + middle mouse button (scroll click)
 
@@ -57,36 +57,51 @@ hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("special"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special", follow = false }))
 
 -- VOLUME
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
+hl.bind(
+  "XF86AudioRaiseVolume",
+  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+  { locked = true, repeating = true }
+)
+hl.bind(
+  "XF86AudioLowerVolume",
+  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"),
+  { locked = true, repeating = true }
+)
+hl.bind(
+  "XF86AudioMute",
+  hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+  { locked = true, repeating = true }
+)
 
 -- MEDIA
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 
 -- BRIGHTNESS
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%-"), { locked = true, repeating = true })
 
 -- SCREENSHOT FOCUSED WINDOW USING PRINT
-hl.bind("PRINT",         hl.dsp.exec_cmd("hyprshot -z -s -m window --clipboard-only"))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -z -m window -o ~/Pictures/captures -f $(date +%I-%M-%S%p_%d-%m-%Y.png)"))
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -z -s -m window --clipboard-only"))
+hl.bind(
+  "SHIFT + PRINT",
+  hl.dsp.exec_cmd("hyprshot -z -m window -o ~/Pictures/captures -f $(date +%I-%M-%S%p_%d-%m-%Y.png)")
+)
 
 -- GESTURES
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" }) -- three finger swipe for workspace
 hl.gesture({
-    fingers = 3,
-    direction = "down",
----@diagnostic disable-next-line: assign-type-mismatch
-    action = function()
-        hl.exec_cmd("hyprshot -z -s -m region --clipboard-only")
-    end
+  fingers = 3,
+  direction = "down",
+  ---@diagnostic disable-next-line: assign-type-mismatch
+  action = function()
+    hl.exec_cmd("hyprshot -z -s -m region --clipboard-only")
+  end,
 })
 hl.gesture({
-    fingers = 4,
-    direction = "down",
----@diagnostic disable-next-line: assign-type-mismatch
-    action = function()
-        hl.exec_cmd("hyprshot -z -m region -o ~/Pictures/captures -f $(date +%I-%M-%S%p_%d-%m-%Y.png)")
-    end
+  fingers = 4,
+  direction = "down",
+  ---@diagnostic disable-next-line: assign-type-mismatch
+  action = function()
+    hl.exec_cmd("hyprshot -z -m region -o ~/Pictures/captures -f $(date +%I-%M-%S%p_%d-%m-%Y.png)")
+  end,
 })
