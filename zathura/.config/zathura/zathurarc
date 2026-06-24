@@ -1,3 +1,7 @@
 set selection-clipboard clipboard
 
 set selection-notification false
+
+map <Down> scroll smooth-down
+map <Up> scroll smooth-up
+set scroll-step 70
