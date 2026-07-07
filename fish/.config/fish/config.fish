@@ -11,6 +11,12 @@ if status is-interactive
     # INITIALIZE TOOLS
     zoxide init fish | source
     devenv hook fish | source
+
+    # pnpm
+    set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
+    if not string match -q -- "$PNPM_HOME/bin" $PATH
+      set -gx PATH "$PNPM_HOME/bin" $PATH
+    end
 end
 
 if status --is-login
