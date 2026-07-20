@@ -4,7 +4,7 @@ local ipc = "qs -c noctalia-shell ipc call"
 
 -- PROGRAMS
 local terminal = "uwsm-app -- kitty"
-local fileManager = "uwsm-app -- kitty -e yazi"
+local fileManager = "uwsm-app -- thunar"
 local launcher = "uwsm-app -- vicinae"
 local browser = "uwsm-app -- librewolf"
 local codeEditor = "uwsm-app -- neovide"
