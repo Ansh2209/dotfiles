@@ -68,7 +68,7 @@ hl.config({
 hl.device({
   name = "pixart-dell-ms116-usb-optical-mouse",
   accel_profile = "flat",
-  sensitivity = 0.4,
+  sensitivity = 0.8,
 })
 
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
