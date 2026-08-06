@@ -25,7 +25,15 @@
     colorMoved = default
     algorithm = histogram
 [alias]
-    sync = !BRANCH=$(git branch --show-current) && git switch main && git fetch upstream && git reset --hard upstream/main && git clean -fd && git switch $BRANCH
+    sync = "!f() { \
+        TARGET_BRANCH=${1:-main}; \
+        CURRENT_BRANCH=$(git branch --show-current); \
+        git switch $TARGET_BRANCH && \
+        git fetch upstream && \
+        git reset --hard upstream/$TARGET_BRANCH && \
+        git clean -fd && \
+        git switch $CURRENT_BRANCH; \
+    }; f"
     unstage = restore --staged
     ac = !git add . && git commit
 [includeIf "gitdir:~/repos/github/"]
