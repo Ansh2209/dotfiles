@@ -3,6 +3,9 @@ if status is-interactive
 
     # ADD PATH
     fish_add_path ~/.nix-profile/bin
+    fish_add_path ~/fvm/default/bin
+    fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
+    fish_add_path $ANDROID_HOME/platform-tools
     
     # SOURCE
     source ~/.config/fish/abbr.fish
