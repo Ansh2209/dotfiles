@@ -16,3 +16,6 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 # MISCELLANEOUS
 export EDITOR=micro
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
+# DEV
+export ANDROID_HOME=$HOME/Android/Sdk
