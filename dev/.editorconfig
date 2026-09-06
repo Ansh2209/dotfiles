@@ -19,3 +19,7 @@ indent_size = 4
 # C
 [*.c]
 indent_size = 4
+
+# C++
+[*.cpp]
+indent_size = 4
