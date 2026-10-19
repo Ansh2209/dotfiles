@@ -1,6 +1,6 @@
 -- VARS
 local mainMod = "SUPER"
-local ipc = "qs -c noctalia-shell ipc call"
+local ipc = "noctalia msg"
 
 -- PROGRAMS
 local terminal = "uwsm-app -- kitty"
@@ -8,8 +8,8 @@ local fileManager = "uwsm-app -- thunar"
 local launcher = "uwsm-app -- vicinae"
 local browser = "uwsm-app -- librewolf"
 local codeEditor = "uwsm-app -- neovide"
-local powerMenu = ipc .. " sessionMenu toggle"
-local settings = ipc .. " settings toggle"
+local powerMenu = ipc .. " panel-toggle session"
+local settings = ipc .. " settings-open"
 
 -- ACTIONS
 hl.bind(mainMod .. " + C", hl.dsp.window.close())                                                        -- close a window
@@ -66,28 +66,16 @@ hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("special"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special", follow = false }))
 
 -- VOLUME
-hl.bind(
-  "XF86AudioRaiseVolume",
-  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-  { locked = true, repeating = true }
-)
-hl.bind(
-  "XF86AudioLowerVolume",
-  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"),
-  { locked = true, repeating = true }
-)
-hl.bind(
-  "XF86AudioMute",
-  hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-  { locked = true, repeating = true }
-)
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume-up 10"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume-down 10"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume-mute"), { locked = true, repeating = true })
 
 -- MEDIA
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. " media toggle"), { locked = true })
 
 -- BRIGHTNESS
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness-up 10"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness-down 10"), { locked = true, repeating = true })
 
 -- SCREENSHOT FOCUSED WINDOW USING PRINT
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -z -s -m window --clipboard-only"))
