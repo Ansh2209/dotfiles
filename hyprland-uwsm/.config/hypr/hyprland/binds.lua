@@ -77,13 +77,6 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. " media toggle"), { locked = tru
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. " brightness-up 10"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. " brightness-down 10"), { locked = true, repeating = true })
 
--- SCREENSHOT FOCUSED WINDOW USING PRINT
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -z -s -m window --clipboard-only"))
-hl.bind(
-  "SHIFT + PRINT",
-  hl.dsp.exec_cmd("hyprshot -z -m window -o ~/Pictures/captures -f $(date +%I-%M-%S%p_%d-%m-%Y.png)")
-)
-
 -- GESTURES
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" }) -- three finger swipe for workspace
 hl.gesture({
