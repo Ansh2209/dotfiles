@@ -7,7 +7,7 @@ local terminal = "uwsm-app -- kitty"
 local fileManager = "uwsm-app -- thunar"
 local launcher = "uwsm-app -- vicinae"
 local browser = "uwsm-app -- librewolf"
-local codeEditor = "uwsm-app -- neovide"
+local codeEditor = "uwsm-app -- code"
 local powerMenu = ipc .. " panel-toggle session"
 local settings = ipc .. " settings-open"
 
