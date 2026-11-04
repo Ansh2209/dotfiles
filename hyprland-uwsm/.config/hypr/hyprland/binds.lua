@@ -10,6 +10,7 @@ local browser = "uwsm-app -- librewolf"
 local codeEditor = "uwsm-app -- code"
 local powerMenu = ipc .. " panel-toggle session"
 local settings = ipc .. " settings-open"
+local networkMenu = ipc .. " panel-toggle control-center network"
 
 -- ACTIONS
 hl.bind(mainMod .. " + C", hl.dsp.window.close())                                                        -- close a window
@@ -29,7 +30,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(launcher .. " vicinae://launch/applic
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(launcher .. " vicinae://launch/clipboard/history")) -- Clipboard History
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(settings))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(powerMenu))
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("uwsm-app -- kitty -e nmtui"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(networkMenu)) -- Toggle network (wifi) menu
 
 -- MOVE FOCUS WITH ARROW KEYS
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
