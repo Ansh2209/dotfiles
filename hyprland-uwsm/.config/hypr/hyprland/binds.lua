@@ -11,6 +11,7 @@ local codeEditor = "uwsm-app -- code"
 local powerMenu = ipc .. " panel-toggle session"
 local settings = ipc .. " settings-open"
 local networkMenu = ipc .. " panel-toggle control-center network"
+local wallpaperMenu = ipc .. " panel-toggle wallpaper"
 
 -- ACTIONS
 hl.bind(mainMod .. " + C", hl.dsp.window.close())                                                        -- close a window
@@ -31,6 +32,7 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(launcher .. " vicinae://launch/clipbo
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(settings))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(powerMenu))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd(networkMenu)) -- Toggle network (wifi) menu
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(wallpaperMenu)) -- Toggle wallpaper menu
 
 -- MOVE FOCUS WITH ARROW KEYS
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
